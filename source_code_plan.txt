@@ -1,0 +1,146 @@
+ #### Sample Run ####
+
+
+
+
+Suspect Database
+
+(press enter to continue)
+
+{cls}
+1: Database
+2: Search by Name
+3: Search by Descriptors
+4: Quit
+
+
+Enter option:
+
+
+
+
+#(option 1 pathway)
+
+{cls}
+Suspect Database
+
+Last Name       First Name      Gender      Age Range       Height      Build       Eye Color       Hair Style      Hair Color      Glasses
+
+Anderson        Richard         Male        Older Adult     Tall        Average     Brown           Mullet          Grey            False
+Tapping         Amanda          Female      Adult           Average     Average     Green           Short           Blonde          False
+Shanks          Michael         Male        Adult           Tall        Fit         Green           Short           Brown           True
+Judge           Christopher     Male        Adult           Tall        Heavy       Brown           Bald            Black           False
+Davis           Don             Male        Senior          Short       Overweight  Blue            Bald            Blonde          False
+Rothery         Teryl           Female      Adult           Short       Fit         Brown           Short           Blonde          True
+Browder         Ben             Male        Adult           Tall        Fit         Blue            Short           Brown           False
+Black           Claudia         Female      Adult           Average     Slim        Grey            Long            Black           False
+Hewlett         David           Male        Adult           Average     Overweight  Green           Scruffy         Brown           True
+Flanigan        Joe             Male        Adult           Tall        Fit         Green           Scruffy         Black           False
+Fish            Jim             Male        Adult           Tall        Fit         Blue            Short           Brown           False
+
+
+(press enter to return to main menu)
+
+
+
+
+#(option 2 pathway)
+
+{cls}
+Search By Name
+
+Please enter the first name of suspect: Ben
+Please enter the last name of suspect: Kenobi
+
+
+Suspect Not in Database.
+
+
+Would you like to search another name? (yes/no): yes
+
+{cls}
+Search By Name
+
+Please enter the first name of suspect: Ben
+Please enter the last name of suspect: Browder
+
+
+Ben Browder:
+
+    Gender      Age Range       Height      Build       Eye Color       Hair Style      Hair Color      Glasses
+
+    Male        Adult           Tall        Fit         Blue            Short           Brown           False
+
+
+Would you like to search another name? (yes/no): no
+
+
+
+
+#(option 3 pathway)
+
+{cls}
+Search By Descriptors
+
+Please fill out descriptors (If a descriptor is unknown, leave it blank)
+
+Gender: male
+Age Range (young adult/adult/older adult/senior): adult
+Height (tall/average/short): tall
+Build (slim/average/fit/heavy/overweight): fit
+Eye Color: blue
+Hair Style: short
+Hair Color: brown
+Glasses (true/false):
+
+
+Matches:
+
+Ben Browder - 100% match
+Jim Fish - 100% match
+Michael Shanks - 68% match
+David Hewlett - 50% match
+
+
+(press enter to return to the main menu)
+
+
+
+
+
+
+ #### Pseudocode ####
+
+
+
+
+ Define constants for main menu options
+
+ Define main function:
+    - define all parallel "descriptor lists" and a list to hold all of the descriptor lists
+    - preloop operations
+    - main program while loop with menu options and goodbye message
+
+ Define display menu function:
+    - displays menu options and accepts user choice
+
+ Define function that displays the database of suspects:
+    - prints categories at top
+    - nested for loop that takes every suspect's descriptors and puts them in a string and prints it
+
+ Define a name search function that accepts user input and searches the database to find if the suspect is in the system:
+    - use a for loop to search the first and last name lists for the entered names
+    - if else statement that displays the suspects descriptors if they are in the system or prints a message telling the
+        user that the suspect is not in the system
+
+ Define a search again function:
+    - after the user is done with a search they will be allowed to search again
+
+ Define function that allows the user to search suspect by descriptors:
+    - print instruction message
+    - accept user input for all descriptors and save them to temporary variables
+    - use a series of for loops and conditionals to search each descriptor list for the entered descriptors. If
+        a descriptor is found at a certain index position, a tally will be added to the corresponding index of
+        a temporary list called matches. When all the descriptor list have been iterated through, a mathematical
+        operation will be done to convert each tally into a "match" percentage. If the match is over 49% it will
+        be displayed to the user.
